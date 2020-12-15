@@ -49,7 +49,7 @@ const HomeContent = () => {
         animate="show"
       >
         <motion.h2 variants={slideLeftForm}>Contact Me</motion.h2>
-        <form className="form" name="contact">
+        <form className="form" name="contact" method="post">
           <input type="hidden" name="form-name" value="contact"></input>
           <motion.label variants={slideLeftForm} htmlFor="name">
             Name:
