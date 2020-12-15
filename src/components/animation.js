@@ -11,6 +11,19 @@ export const slideUp = {
     },
   },
 };
+export const slideUpContent = {
+  hidden: {
+    opacity: 0,
+    y: 100,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.3,
+    },
+  },
+};
 export const slideDown = {
   hidden: {
     opacity: 0,
@@ -52,6 +65,19 @@ export const slideLeft = {
     },
   },
 };
+export const slideLeftForm = {
+  hidden: {
+    opacity: 0,
+    x: 100,
+  },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.2,
+    },
+  },
+};
 export const slideLeftBurger = {
   hidden: {
     opacity: 0,
@@ -73,6 +99,15 @@ export const slideLeftContainer = {
   show: {
     opacity: 1,
     transition: { staggerChildren: 0.3 },
+  },
+};
+export const slideLeftContainerForm = {
+  hidden: {
+    opacity: 1,
+  },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.1 },
   },
 };
 
@@ -99,5 +134,15 @@ export const burgerMenuAnim = {
     transition: {
       duration: 0.75,
     },
+  },
+};
+
+export const slideUpContainer = {
+  hidden: {
+    opacity: 1,
+  },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.25 },
   },
 };

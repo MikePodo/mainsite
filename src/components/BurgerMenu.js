@@ -65,7 +65,7 @@ const StyledBurgerMenu = styled(motion.div)`
 
 const Circle = styled.div`
   position: absolute;
-  background: #262626;
+  background: #464646;
   width: 150rem;
   height: 150rem;
   border-radius: 50%;

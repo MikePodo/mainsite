@@ -1,8 +1,10 @@
 import React from "react";
 //Components
+import BurgerMenu from "../components/BurgerMenu";
+import Footer from "../components/Footer";
+import HomeContent from "../components/HomeContent";
 import HomeTitle from "../components/HomeTitle";
 import Nav from "../components/Nav";
-import BurgerMenu from "../components/BurgerMenu";
 //Animation
 import { AnimatePresence } from "framer-motion";
 
@@ -14,6 +16,8 @@ const Home = ({ setBurgerMenu, burgerMenu }) => {
       </AnimatePresence>
       <Nav setBurgerMenu={setBurgerMenu} />
       <HomeTitle />
+      <HomeContent />
+      <Footer />
     </>
   );
 };
