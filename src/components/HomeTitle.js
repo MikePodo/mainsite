@@ -3,30 +3,51 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 //Images
 import logo from "../img/guitar-logo.jpg";
+//Icons
+import { GoLocation } from "react-icons/go";
+//Animation
+import { slideUp, slideDown } from "./animation";
 
 const HomeTitle = () => {
   return (
     <StyledHomeTitle>
-      <StyledLogo src={logo} alt="" />
-      <h2>Michael Podolsky</h2>
-      <h3>Front-End Software Developer</h3>
-      <h4>Las Vegas, NV</h4>
+      <StyledLogo
+        variants={slideDown}
+        initial="hidden"
+        animate="show"
+        src={logo}
+        alt="logo"
+      />
+      <motion.h2 variants={slideUp} initial="hidden" animate="show">
+        Michael Podolsky
+      </motion.h2>
+      <motion.h3 variants={slideUp} initial="hidden" animate="show">
+        Front-End Software Developer
+      </motion.h3>
+      <motion.h4
+        variants={slideUp}
+        initial="hidden"
+        animate="show"
+        style={{ display: "flex", alignItems: "center" }}
+      >
+        <GoLocation style={{ margin: "0rem 0.5rem" }} />
+        Las Vegas, NV
+      </motion.h4>
       <Line />
     </StyledHomeTitle>
   );
 };
 
-export default HomeTitle;
-
 const StyledHomeTitle = styled(motion.div)`
   background: #3f0000;
-  height: 30vh;
+  min-height: 30vh;
   padding: 1rem 0rem;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  overflow: hidden;
   h2 {
     color: #eaeaea;
     font-size: 2.5rem;
@@ -39,6 +60,20 @@ const StyledHomeTitle = styled(motion.div)`
     color: #878787;
     font-size: 1.5rem;
   }
+  @media screen and (max-width: 600px) {
+    h2 {
+      font-size: 2rem;
+      text-align: center;
+    }
+    h3 {
+      font-size: 1.5rem;
+      text-align: center;
+      padding: 0rem 0.5rem;
+    }
+    h4 {
+      font-size: 1rem;
+    }
+  }
 `;
 
 const StyledLogo = styled(motion.img)`
@@ -46,6 +81,10 @@ const StyledLogo = styled(motion.img)`
   height: 7rem;
   border-radius: 50%;
   border: 3px solid #b9b9b9;
+  @media screen and (max-width: 600px) {
+    width: 5rem;
+    height: 5rem;
+  }
 `;
 
 const Line = styled(motion.div)`
@@ -56,3 +95,5 @@ const Line = styled(motion.div)`
   bottom: 0;
   left: 0;
 `;
+
+export default HomeTitle;

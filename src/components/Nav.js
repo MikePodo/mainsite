@@ -3,42 +3,61 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 //Router
 import { Link } from "react-router-dom";
+//Animations
+import {
+  slideRight,
+  slideLeft,
+  slideLeftContainer,
+  slideLeftBurger,
+} from "./animation";
+//Icons
+import { FiMenu } from "react-icons/fi";
 
-const Nav = () => {
+const Nav = ({ setBurgerMenu }) => {
+  const openBurgerMenuHandler = () => {
+    setBurgerMenu(true);
+  };
+
   return (
     <StyledNav>
-      <NavLogo>
+      <NavLogo variants={slideRight} initial="hidden" animate="show">
         <h1>
           <Link to="/">MICHAEL PODOLSKY</Link>
         </h1>
       </NavLogo>
-      <NavItems>
-        <h4>
+      <NavItems variants={slideLeftContainer} initial="hidden" animate="show">
+        <motion.h4 variants={slideLeft}>
           <Link to="/">Home</Link>
-        </h4>
-        <h4>
+        </motion.h4>
+        <motion.h4 variants={slideLeft}>
           <Link to="/certificates">Certificates</Link>
-        </h4>
-        <h4>
+        </motion.h4>
+        <motion.h4 variants={slideLeft}>
           <Link to="/projects">Projects</Link>
-        </h4>
+        </motion.h4>
       </NavItems>
+      <NavItemsBurger>
+        <motion.div variants={slideLeftBurger} initial="hidden" animate="show">
+          <FiMenu className="burger" onClick={openBurgerMenuHandler} />
+        </motion.div>
+      </NavItemsBurger>
       <Line />
     </StyledNav>
   );
 };
 
-export default Nav;
-
 const StyledNav = styled(motion.nav)`
   position: relative;
   background: #262626;
-  height: 5vh;
+  min-height: 5vh;
   color: #eaeaea;
   display: flex;
   align-items: center;
   padding: 0rem 5rem;
   justify-content: space-between;
+  @media screen and (max-width: 800px) {
+    padding: 0rem 1rem;
+  }
 `;
 
 const NavLogo = styled(motion.div)`
@@ -50,18 +69,46 @@ const NavLogo = styled(motion.div)`
       text-decoration: none;
       color: #eaeaea;
     }
+    @media screen and (max-width: 1000px) {
+      font-size: 1rem;
+    }
   }
 `;
 
 const NavItems = styled(motion.div)`
   display: flex;
+  position: relative;
+  align-items: center;
   width: 25%;
+  .burger {
+    display: none;
+  }
   justify-content: space-between;
   a {
     font-weight: 300;
     color: #eaeaea;
     text-decoration: none;
     font-size: 1.3rem;
+  }
+  @media screen and (max-width: 1550px) {
+    width: 40%;
+  }
+  @media screen and (max-width: 1000px) {
+    display: none;
+  }
+`;
+
+const NavItemsBurger = styled(motion.div)`
+  width: 25%;
+  display: flex;
+  justify-content: flex-end;
+  .burger {
+    transform: scale(2);
+    color: #eaeaea;
+    cursor: pointer;
+  }
+  @media screen and (min-width: 1000px) {
+    display: none;
   }
 `;
 
@@ -73,3 +120,5 @@ const Line = styled(motion.div)`
   bottom: 0;
   left: 0;
 `;
+
+export default Nav;
