@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 //Router
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 //Animations
 import {
   slideRight,
@@ -17,7 +17,7 @@ const Nav = ({ setBurgerMenu }) => {
   const openBurgerMenuHandler = () => {
     setBurgerMenu(true);
   };
-
+  const location = useLocation();
   return (
     <StyledNav>
       <NavLogo variants={slideRight} initial="hidden" animate="show">
@@ -26,13 +26,22 @@ const Nav = ({ setBurgerMenu }) => {
         </h1>
       </NavLogo>
       <NavItems variants={slideLeftContainer} initial="hidden" animate="show">
-        <motion.h4 variants={slideLeft}>
+        <motion.h4
+          className={location.pathname === "/" ? "selected" : ""}
+          variants={slideLeft}
+        >
           <Link to="/">Home</Link>
         </motion.h4>
-        <motion.h4 variants={slideLeft}>
+        <motion.h4
+          className={location.pathname === "/certificates" ? "selected" : ""}
+          variants={slideLeft}
+        >
           <Link to="/certificates">Certificates</Link>
         </motion.h4>
-        <motion.h4 variants={slideLeft}>
+        <motion.h4
+          className={location.pathname === "/projects" ? "selected" : ""}
+          variants={slideLeft}
+        >
           <Link to="/projects">Projects</Link>
         </motion.h4>
       </NavItems>
@@ -79,7 +88,7 @@ const NavItems = styled(motion.div)`
   display: flex;
   position: relative;
   align-items: center;
-  width: 25%;
+  width: 30%;
   .burger {
     display: none;
   }
@@ -90,7 +99,14 @@ const NavItems = styled(motion.div)`
     text-decoration: none;
     font-size: 1.3rem;
   }
-  @media screen and (max-width: 1550px) {
+  h4 {
+    padding: 0rem 1rem;
+  }
+  .selected {
+    border-left: 1px solid #eaeaea;
+    border-right: 1px solid #eaeaea;
+  }
+  @media screen and (max-width: 1650px) {
     width: 40%;
   }
   @media screen and (max-width: 1000px) {

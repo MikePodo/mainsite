@@ -10,10 +10,6 @@ import {
 } from "./animation";
 
 const HomeContent = () => {
-  //   const submitHandler = (e) => {
-  //     e.preventDefault();
-  //   };
-
   return (
     <StyledHomeContent>
       <ContentLeft variants={slideUpContainer} initial="hidden" animate="show">
@@ -232,15 +228,16 @@ const ContentRight = styled(motion.div)`
   @media screen and (max-width: 800px) {
     width: 90%;
     margin-bottom: 1rem;
-  }
-  h2 {
-    font-size: 24px;
-  }
-  .form {
-    font-size: 16px;
-  }
-  input {
-    font-size: 16px;
+
+    h2 {
+      font-size: 24px;
+    }
+    .form {
+      font-size: 16px;
+    }
+    input {
+      font-size: 16px;
+    }
   }
 `;
 
