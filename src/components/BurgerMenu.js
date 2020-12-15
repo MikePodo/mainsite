@@ -39,7 +39,7 @@ const StyledBurgerMenu = styled(motion.div)`
   width: 100%;
   height: 100vh;
   z-index: 10;
-  background: #262626;
+  background: #878787;
   display: flex;
   flex-direction: column;
   justify-content: space-around;

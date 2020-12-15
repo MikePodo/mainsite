@@ -87,6 +87,7 @@ const HomeContent = () => {
           </motion.button>
         </form>
       </ContentRight>
+      {/* <Line /> */}
     </StyledHomeContent>
   );
 };
@@ -97,6 +98,10 @@ const StyledHomeContent = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  position: relative;
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+  }
 `;
 
 const ContentLeft = styled(motion.div)`
@@ -119,6 +124,7 @@ const ContentLeft = styled(motion.div)`
   ul {
     list-style-position: inside;
   }
+
   @media screen and (max-width: 1800px) {
     h2 {
       font-size: 28px;
@@ -127,6 +133,10 @@ const ContentLeft = styled(motion.div)`
     li {
       font-size: 20px;
     }
+  }
+  @media screen and (max-width: 800px) {
+    width: 90%;
+    margin: auto;
   }
 `;
 
@@ -169,6 +179,7 @@ const ContentRight = styled(motion.div)`
       font-family: "Poppins", sans-serif;
     }
     button {
+      cursor: pointer;
       font-size: 24px;
       margin-top: 2rem;
       padding: 0.5rem 3rem;
@@ -188,6 +199,19 @@ const ContentRight = styled(motion.div)`
       font-size: 20px;
     }
   }
+  @media screen and (max-width: 800px) {
+    width: 90%;
+    margin-bottom: 1rem;
+  }
+`;
+
+const Line = styled(motion.div)`
+  width: 100%;
+  height: 2px;
+  background: #878787;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 `;
 
 export default HomeContent;
