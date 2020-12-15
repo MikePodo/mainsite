@@ -9,6 +9,7 @@ const GlobalStyle = createGlobalStyle`
     body{
         font-family: "Poppins", sans-serif;
         background:#262626;
+        overflow: ${(props) => (props.burgerMenu ? "hidden" : "auto")}
     }
 `;
 

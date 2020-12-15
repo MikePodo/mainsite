@@ -11,8 +11,8 @@ function App() {
   const [burgerMenu, setBurgerMenu] = useState(false);
 
   return (
-    <div className="App">
-      <GlobalStyle />
+    <div className="App" style={{ overflow: "hidden" }}>
+      <GlobalStyle burgerMenu={burgerMenu} />
 
       <Switch>
         <Route path="/" exact>

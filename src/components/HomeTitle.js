@@ -48,6 +48,7 @@ const StyledHomeTitle = styled(motion.div)`
   justify-content: space-around;
   align-items: center;
   overflow: hidden;
+
   h2 {
     color: #eaeaea;
     font-size: 2.5rem;
