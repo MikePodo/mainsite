@@ -19,16 +19,17 @@ const BurgerMenu = ({ setBurgerMenu }) => {
       initial="hidden"
       animate="show"
       exit="exit"
+      key="burgermenu"
     >
       <Circle></Circle>
       <AiOutlineClose className="close" onClick={closeBurgerMenuHandler} />
-      <h1>
+      <h1 onClick={closeBurgerMenuHandler}>
         <Link to="/">Home</Link>
       </h1>
-      <h1>
+      <h1 onClick={closeBurgerMenuHandler}>
         <Link to="/certificates">Certificates</Link>
       </h1>
-      <h1>
+      <h1 onClick={closeBurgerMenuHandler}>
         <Link to="/projects">Projects</Link>
       </h1>
     </StyledBurgerMenu>
