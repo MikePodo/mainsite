@@ -135,6 +135,15 @@ const ContentLeft = styled(motion.div)`
     }
   }
   @media screen and (max-width: 800px) {
+    h2 {
+      font-size: 24px;
+    }
+    p,
+    li {
+      font-size: 16px;
+    }
+  }
+  @media screen and (max-width: 800px) {
     width: 90%;
     margin: auto;
   }
@@ -168,6 +177,13 @@ const ContentRight = styled(motion.div)`
       border-bottom: 2px solid #878787;
       color: #878787;
       margin-bottom: 1rem;
+      width: 60%;
+      @media screen and (max-width: 1500px) {
+        width: 80%;
+      }
+      @media screen and (max-width: 1050px) {
+        width: 100%;
+      }
     }
     .textarea {
       background: transparent;
@@ -177,6 +193,13 @@ const ContentRight = styled(motion.div)`
       color: #878787;
       resize: none;
       font-family: "Poppins", sans-serif;
+      width: 60%;
+      @media screen and (max-width: 1500px) {
+        width: 80%;
+      }
+      @media screen and (max-width: 1050px) {
+        width: 100%;
+      }
     }
     button {
       cursor: pointer;
@@ -202,6 +225,15 @@ const ContentRight = styled(motion.div)`
   @media screen and (max-width: 800px) {
     width: 90%;
     margin-bottom: 1rem;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  .form {
+    font-size: 16px;
+  }
+  input {
+    font-size: 16px;
   }
 `;
 

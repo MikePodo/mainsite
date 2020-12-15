@@ -93,6 +93,10 @@ const StyledFooter = styled(motion.footer)`
   @media screen and (max-width: 800px) {
     padding: 0rem 1rem;
   }
+  @media screen and (max-height: 640px) {
+    height: auto;
+    min-height: 2.5vh;
+  }
 `;
 const Line = styled(motion.div)`
   width: 100%;
