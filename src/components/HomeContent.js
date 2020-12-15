@@ -49,7 +49,8 @@ const HomeContent = () => {
         animate="show"
       >
         <motion.h2 variants={slideLeftForm}>Contact Me</motion.h2>
-        <form className="form" name="contact" netlify data-netlify="true">
+        <form className="form" name="contact">
+          <input type="hidden" name="form-name" value="contact"></input>
           <motion.label variants={slideLeftForm} htmlFor="name">
             Name:
           </motion.label>
@@ -59,6 +60,7 @@ const HomeContent = () => {
             required
             type="text"
             id="name"
+            name="name"
           />
           <br />
           <motion.label variants={slideLeftForm} htmlFor="email">
@@ -70,6 +72,7 @@ const HomeContent = () => {
             required
             type="email"
             id="email"
+            name="email"
           />
           <br />
           <motion.label variants={slideLeftForm} htmlFor="message">
@@ -84,6 +87,7 @@ const HomeContent = () => {
             id="message"
             rows="7"
             cols="10"
+            name="message"
           />
           <br />
           <motion.button variants={slideLeftForm} type="submit">
