@@ -8,7 +8,7 @@ import Nav from "../components/Nav";
 //Animation
 import { AnimatePresence } from "framer-motion";
 
-const Home = ({ setBurgerMenu, burgerMenu }) => {
+const Home = ({ setBurgerMenu, burgerMenu, isDesktop }) => {
   return (
     <>
       <AnimatePresence>
@@ -16,7 +16,7 @@ const Home = ({ setBurgerMenu, burgerMenu }) => {
       </AnimatePresence>
       <Nav setBurgerMenu={setBurgerMenu} />
       <HomeTitle />
-      <HomeContent />
+      <HomeContent isDesktop={isDesktop} />
       <Footer />
     </>
   );

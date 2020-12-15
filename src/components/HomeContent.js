@@ -7,9 +7,12 @@ import {
   slideLeftForm,
   slideUpContainer,
   slideUpContent,
+  scrollReveal,
 } from "./animation";
+import { useScroll } from "../useScroll";
 
-const HomeContent = () => {
+const HomeContent = ({ isDesktop }) => {
+  const [element, controls] = useScroll();
   return (
     <StyledHomeContent>
       <ContentLeft variants={slideUpContainer} initial="hidden" animate="show">
@@ -39,58 +42,93 @@ const HomeContent = () => {
           </motion.ul>
         </ContentLeftBottom>
       </ContentLeft>
-      <ContentRight
-        variants={slideLeftContainerForm}
-        initial="hidden"
-        animate="show"
-      >
-        <motion.h2 variants={slideLeftForm}>Contact Me</motion.h2>
-        <form className="form" name="contact" method="post">
-          <input type="hidden" name="form-name" value="contact"></input>
-          <motion.label variants={slideLeftForm} htmlFor="name">
-            Name:
-          </motion.label>
-          <br />
-          <motion.input
-            variants={slideLeftForm}
-            required
-            type="text"
-            id="name"
-            name="name"
-          />
-          <br />
-          <motion.label variants={slideLeftForm} htmlFor="email">
-            Email:
-          </motion.label>
-          <br />
-          <motion.input
-            variants={slideLeftForm}
-            required
-            type="email"
-            id="email"
-            name="email"
-          />
-          <br />
-          <motion.label variants={slideLeftForm} htmlFor="message">
-            Message:
-          </motion.label>
-          <br />
-          <motion.textarea
-            variants={slideLeftForm}
-            className="textarea"
-            required
-            type="textarea"
-            id="message"
-            rows="7"
-            cols="10"
-            name="message"
-          />
-          <br />
-          <motion.button variants={slideLeftForm} type="submit">
-            Submit
-          </motion.button>
-        </form>
-      </ContentRight>
+      {isDesktop ? (
+        <ContentRight
+          variants={slideLeftContainerForm}
+          initial="hidden"
+          animate="show"
+        >
+          <motion.h2 variants={slideLeftForm}>Contact Me</motion.h2>
+          <form className="form" name="contact" method="post">
+            <input type="hidden" name="form-name" value="contact"></input>
+            <motion.label variants={slideLeftForm} htmlFor="name">
+              Name:
+            </motion.label>
+            <br />
+            <motion.input
+              variants={slideLeftForm}
+              required
+              type="text"
+              id="name"
+              name="name"
+            />
+            <br />
+            <motion.label variants={slideLeftForm} htmlFor="email">
+              Email:
+            </motion.label>
+            <br />
+            <motion.input
+              variants={slideLeftForm}
+              required
+              type="email"
+              id="email"
+              name="email"
+            />
+            <br />
+            <motion.label variants={slideLeftForm} htmlFor="message">
+              Message:
+            </motion.label>
+            <br />
+            <motion.textarea
+              variants={slideLeftForm}
+              className="textarea"
+              required
+              type="textarea"
+              id="message"
+              rows="7"
+              cols="10"
+              name="message"
+            />
+            <br />
+            <motion.button variants={slideLeftForm} type="submit">
+              Submit
+            </motion.button>
+          </form>
+        </ContentRight>
+      ) : (
+        <ContentRight
+          variants={scrollReveal}
+          ref={element}
+          initial="hidden"
+          animate={controls}
+        >
+          <motion.h2>Contact Me</motion.h2>
+          <form className="form" name="contact" method="post">
+            <input type="hidden" name="form-name" value="contact"></input>
+            <motion.label htmlFor="name">Name:</motion.label>
+            <br />
+            <motion.input required type="text" id="name" name="name" />
+            <br />
+            <motion.label htmlFor="email">Email:</motion.label>
+            <br />
+            <motion.input required type="email" id="email" name="email" />
+            <br />
+            <motion.label htmlFor="message">Message:</motion.label>
+            <br />
+            <motion.textarea
+              className="textarea"
+              required
+              type="textarea"
+              id="message"
+              rows="7"
+              cols="10"
+              name="message"
+            />
+            <br />
+            <motion.button type="submit">Submit</motion.button>
+          </form>
+        </ContentRight>
+      )}
     </StyledHomeContent>
   );
 };
@@ -227,6 +265,7 @@ const ContentRight = styled(motion.div)`
   }
   @media screen and (max-width: 800px) {
     width: 90%;
+    margin: auto;
     margin-bottom: 1rem;
 
     h2 {

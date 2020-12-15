@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 //Components
 import Certificates from "./pages/Certificates";
 import GlobalStyle from "./components/GlobalStyle";
@@ -11,6 +11,16 @@ import { AnimatePresence } from "framer-motion";
 
 function App() {
   const [burgerMenu, setBurgerMenu] = useState(false);
+  const [isDesktop, setDesktop] = useState(window.innerWidth > 800);
+
+  const updateMedia = () => {
+    setDesktop(window.innerWidth > 800);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", updateMedia);
+    return () => window.removeEventListener("resize", updateMedia);
+  });
 
   const location = useLocation();
 
@@ -20,7 +30,11 @@ function App() {
       <AnimatePresence>
         <Switch location={location}>
           <Route path="/" exact>
-            <Home setBurgerMenu={setBurgerMenu} burgerMenu={burgerMenu} />
+            <Home
+              isDesktop={isDesktop}
+              setBurgerMenu={setBurgerMenu}
+              burgerMenu={burgerMenu}
+            />
           </Route>
           <Route path="/certificates" exact>
             <Certificates
