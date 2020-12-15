@@ -10,6 +10,10 @@ import {
 } from "./animation";
 
 const HomeContent = () => {
+  const submitHandler = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <StyledHomeContent>
       <ContentLeft variants={slideUpContainer} initial="hidden" animate="show">
@@ -45,7 +49,7 @@ const HomeContent = () => {
         animate="show"
       >
         <motion.h2 variants={slideLeftForm}>Contact Me</motion.h2>
-        <form className="form" netlify>
+        <form onSubmit={submitHandler} className="form" name="contact" netlify>
           <motion.label variants={slideLeftForm} htmlFor="name">
             Name:
           </motion.label>
