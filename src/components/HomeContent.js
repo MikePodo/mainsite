@@ -87,7 +87,6 @@ const HomeContent = () => {
           </motion.button>
         </form>
       </ContentRight>
-      {/* <Line /> */}
     </StyledHomeContent>
   );
 };
@@ -235,15 +234,6 @@ const ContentRight = styled(motion.div)`
   input {
     font-size: 16px;
   }
-`;
-
-const Line = styled(motion.div)`
-  width: 100%;
-  height: 2px;
-  background: #878787;
-  position: absolute;
-  bottom: 0;
-  left: 0;
 `;
 
 export default HomeContent;

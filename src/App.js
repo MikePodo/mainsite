@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 //Components
-import BurgerMenu from "./components/BurgerMenu";
 import Certificates from "./pages/Certificates";
 import GlobalStyle from "./components/GlobalStyle";
 import Home from "./pages/Home";
