@@ -3,10 +3,12 @@ import React from "react";
 import { AnimatePresence } from "framer-motion";
 //Components
 import BurgerMenu from "../components/BurgerMenu";
+import CertificatesContent from "../components/CertificatesContent";
 import CertificatesTitle from "../components/CertificatesTitle";
+import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 
-const Certificates = ({ setBurgerMenu, burgerMenu }) => {
+const Certificates = ({ setBurgerMenu, burgerMenu, isDesktop }) => {
   return (
     <>
       <AnimatePresence>
@@ -14,6 +16,8 @@ const Certificates = ({ setBurgerMenu, burgerMenu }) => {
       </AnimatePresence>
       <Nav setBurgerMenu={setBurgerMenu} />
       <CertificatesTitle />
+      <CertificatesContent isDesktop={isDesktop} />
+      <Footer />
     </>
   );
 };

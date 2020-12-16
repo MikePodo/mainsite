@@ -35,7 +35,11 @@ function App() {
           />
         </Route>
         <Route path="/certificates" exact>
-          <Certificates setBurgerMenu={setBurgerMenu} burgerMenu={burgerMenu} />
+          <Certificates
+            isDesktop={isDesktop}
+            setBurgerMenu={setBurgerMenu}
+            burgerMenu={burgerMenu}
+          />
         </Route>
         <Route path="/projects" exact>
           <Projects />

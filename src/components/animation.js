@@ -214,3 +214,15 @@ export const blueSlide = {
     transition: { duration: 0.75 },
   },
 };
+
+export const imageAnim = {
+  hidden: {
+    scale: 1.3,
+    opacity: 0,
+  },
+  show: {
+    scale: 1,
+    opacity: 1,
+    transition: { duration: 0.75 },
+  },
+};
