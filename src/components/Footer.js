@@ -84,6 +84,11 @@ const StyledFooter = styled(motion.footer)`
         width: 100%;
         color: #878787;
         transform: scale(0.8);
+        transition: all 0.3s ease;
+        &:hover {
+          color: #3f0000;
+          transform: scale(1);
+        }
       }
     }
     @media screen and (max-width: 800px) {

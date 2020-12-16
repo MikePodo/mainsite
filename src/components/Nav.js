@@ -98,6 +98,10 @@ const NavItems = styled(motion.div)`
     color: #eaeaea;
     text-decoration: none;
     font-size: 1.3rem;
+    transition: all 0.3s ease;
+    &:hover {
+      font-size: 1.7rem;
+    }
   }
   h4 {
     padding: 0rem 1rem;

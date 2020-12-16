@@ -3,19 +3,16 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 //Images
 import logo from "../img/guitar-logo.jpg";
-//Icons
-import { GoLocation } from "react-icons/go";
 //Animation
-import { slideUpTitle, slideDown, redSlide } from "./animation";
+import { slideUpTitle, slideDown, blueSlide } from "./animation";
 
-const HomeTitle = () => {
+const CertificatesTitle = () => {
   return (
-    <StyledHomeTitle>
-      <HomeTitleBackground
-        variants={redSlide}
+    <StyledCertificatesTitle>
+      <CertificatesTitleBackground
+        variants={blueSlide}
         initial="hidden"
         animate="show"
-        exit="exit"
       />
       <StyledLogo
         variants={slideDown}
@@ -24,35 +21,27 @@ const HomeTitle = () => {
         src={logo}
         alt="logo"
       />
-      <motion.h2 variants={slideUpTitle} initial="hidden" animate="show">
-        Michael Podolsky
-      </motion.h2>
-      <motion.h3 variants={slideUpTitle} initial="hidden" animate="show">
-        Front-End Software Developer
-      </motion.h3>
-      <motion.h4
+      <motion.h2
+        style={{ zIndex: 1 }}
         variants={slideUpTitle}
         initial="hidden"
         animate="show"
-        style={{ display: "flex", alignItems: "center" }}
       >
-        <GoLocation style={{ margin: "0rem 0.5rem" }} />
-        Las Vegas, NV
-      </motion.h4>
+        Certificates
+      </motion.h2>
       <Line />
-    </StyledHomeTitle>
+    </StyledCertificatesTitle>
   );
 };
 
-const HomeTitleBackground = styled(motion.div)`
-  background: #3f0000;
+const CertificatesTitleBackground = styled(motion.div)`
+  background: #09173c;
   width: 100%;
   height: 100%;
   position: absolute;
-  z-index: -1;
 `;
 
-const StyledHomeTitle = styled(motion.div)`
+const StyledCertificatesTitle = styled(motion.div)`
   background: transparent;
   min-height: 30vh;
   padding: 1rem 0rem;
@@ -96,6 +85,7 @@ const StyledLogo = styled(motion.img)`
   height: 7rem;
   border-radius: 50%;
   border: 3px solid #b9b9b9;
+  z-index: 1;
   @media screen and (max-width: 600px) {
     width: 5rem;
     height: 5rem;
@@ -111,4 +101,4 @@ const Line = styled(motion.div)`
   left: 0;
 `;
 
-export default HomeTitle;
+export default CertificatesTitle;

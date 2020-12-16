@@ -27,26 +27,22 @@ function App() {
   return (
     <div className="App" style={{ overflow: "hidden" }}>
       <GlobalStyle burgerMenu={burgerMenu} />
-      <AnimatePresence>
-        <Switch location={location}>
-          <Route path="/" exact>
-            <Home
-              isDesktop={isDesktop}
-              setBurgerMenu={setBurgerMenu}
-              burgerMenu={burgerMenu}
-            />
-          </Route>
-          <Route path="/certificates" exact>
-            <Certificates
-              setBurgerMenu={setBurgerMenu}
-              burgerMenu={burgerMenu}
-            />
-          </Route>
-          <Route path="/projects" exact>
-            <Projects />
-          </Route>
-        </Switch>
-      </AnimatePresence>
+
+      <Switch location={location}>
+        <Route path="/" exact>
+          <Home
+            isDesktop={isDesktop}
+            setBurgerMenu={setBurgerMenu}
+            burgerMenu={burgerMenu}
+          />
+        </Route>
+        <Route path="/certificates" exact>
+          <Certificates setBurgerMenu={setBurgerMenu} burgerMenu={burgerMenu} />
+        </Route>
+        <Route path="/projects" exact>
+          <Projects />
+        </Route>
+      </Switch>
     </div>
   );
 }

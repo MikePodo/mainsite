@@ -49,7 +49,12 @@ const HomeContent = ({ isDesktop }) => {
           animate="show"
         >
           <motion.h2 variants={slideLeftForm}>Contact Me</motion.h2>
-          <form className="form" name="contact" method="post">
+          <form
+            data-error="Please fill out this form."
+            className="form"
+            name="contact"
+            method="post"
+          >
             <input type="hidden" name="form-name" value="contact"></input>
             <motion.label variants={slideLeftForm} htmlFor="name">
               Name:
@@ -206,10 +211,12 @@ const ContentRight = styled(motion.div)`
     color: #b9b9b9;
     text-align: center;
   }
+
   .form {
     color: #eaeaea;
     font-size: 24px;
     text-align: center;
+
     input {
       font-size: 24px;
       padding: 0.5rem 0rem;
@@ -219,6 +226,15 @@ const ContentRight = styled(motion.div)`
       color: #878787;
       margin-bottom: 1rem;
       width: 60%;
+      transition: all 0.3s ease;
+      &:hover {
+        border-bottom: 7px solid #878787;
+      }
+      &:focus {
+        border-bottom: 7px solid #878787;
+        outline: none;
+      }
+
       @media screen and (max-width: 1500px) {
         width: 80%;
       }
@@ -235,6 +251,14 @@ const ContentRight = styled(motion.div)`
       resize: none;
       font-family: "Poppins", sans-serif;
       width: 60%;
+      transition: all 0.3s ease;
+      &:hover {
+        border-bottom: 7px solid #878787;
+      }
+      &:focus {
+        border-bottom: 7px solid #878787;
+        outline: none;
+      }
       @media screen and (max-width: 1500px) {
         width: 80%;
       }
@@ -250,6 +274,11 @@ const ContentRight = styled(motion.div)`
       background: transparent;
       border: 2px solid #878787;
       color: #eaeaea;
+      transition: all 0.3s ease;
+      &:hover {
+        background: #3f0000;
+        font-size: 26px;
+      }
     }
   }
   @media screen and (max-width: 1800px) {
