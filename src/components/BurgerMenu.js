@@ -38,7 +38,7 @@ const BurgerMenu = ({ setBurgerMenu }) => {
         <Link to="/certificates">Certificates</Link>
       </h1>
       <h1
-        className={location.pathname === "/project" ? "current" : ""}
+        className={location.pathname === "/projects" ? "current" : ""}
         onClick={closeBurgerMenuHandler}
       >
         <Link to="/projects">Projects</Link>

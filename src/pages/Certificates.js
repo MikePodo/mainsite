@@ -8,7 +8,7 @@ import CertificatesTitle from "../components/CertificatesTitle";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 
-const Certificates = ({ setBurgerMenu, burgerMenu, isDesktop }) => {
+const Certificates = ({ setBurgerMenu, burgerMenu }) => {
   return (
     <>
       <AnimatePresence>
@@ -16,7 +16,7 @@ const Certificates = ({ setBurgerMenu, burgerMenu, isDesktop }) => {
       </AnimatePresence>
       <Nav setBurgerMenu={setBurgerMenu} />
       <CertificatesTitle />
-      <CertificatesContent isDesktop={isDesktop} />
+      <CertificatesContent />
       <Footer />
     </>
   );

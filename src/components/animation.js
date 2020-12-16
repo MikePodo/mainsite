@@ -174,6 +174,18 @@ export const scrollRevealForm = {
     transition: { duration: 0.5 },
   },
 };
+export const scrollRevealImage = {
+  hidden: {
+    opacity: 0,
+    x: "50%",
+    transition: { duration: 0.5 },
+  },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.5 },
+  },
+};
 export const scrollRevealAbout = {
   hidden: {
     opacity: 0,
@@ -214,15 +226,26 @@ export const blueSlide = {
     transition: { duration: 0.75 },
   },
 };
+export const purpleSlide = {
+  hidden: {
+    y: "-100%",
+  },
+  show: {
+    y: "0%",
+    transition: { duration: 0.75 },
+  },
+};
 
 export const imageAnim = {
   hidden: {
     scale: 1.3,
     opacity: 0,
+    skew: 10,
   },
   show: {
     scale: 1,
+    skew: 0,
     opacity: 1,
-    transition: { duration: 0.75 },
+    transition: { duration: 1 },
   },
 };

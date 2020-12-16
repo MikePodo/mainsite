@@ -7,7 +7,7 @@ import Cert2 from "../img/javascript.jpg";
 import Cert3 from "../img/react.jpg";
 //Animation
 import { imageAnim } from "./animation";
-const CertificatesContent = ({ isDesktop }) => {
+const CertificatesContent = () => {
   return (
     <StyledContent>
       <motion.img

@@ -25,7 +25,6 @@ function App() {
   return (
     <div className="App" style={{ overflow: "hidden" }}>
       <GlobalStyle burgerMenu={burgerMenu} />
-
       <Switch location={location}>
         <Route path="/" exact>
           <Home
@@ -35,14 +34,14 @@ function App() {
           />
         </Route>
         <Route path="/certificates" exact>
-          <Certificates
-            isDesktop={isDesktop}
-            setBurgerMenu={setBurgerMenu}
-            burgerMenu={burgerMenu}
-          />
+          <Certificates setBurgerMenu={setBurgerMenu} burgerMenu={burgerMenu} />
         </Route>
         <Route path="/projects" exact>
-          <Projects />
+          <Projects
+            isDesktop={isDesktop}
+            burgerMenu={burgerMenu}
+            setBurgerMenu={setBurgerMenu}
+          />
         </Route>
       </Switch>
     </div>
