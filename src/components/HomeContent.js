@@ -271,13 +271,16 @@ const ContentRight = styled(motion.div)`
       color: #878787;
       margin-bottom: 1rem;
       width: 60%;
-      transition: all 0.3s ease;
+      transition: all 0.5s ease;
       &:hover {
         border-bottom: 7px solid #878787;
       }
       &:focus {
         border-bottom: 7px solid #878787;
         outline: none;
+        box-shadow: 1px 1px 30px #1b1b1b;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
       }
 
       @media screen and (max-width: 1500px) {
@@ -296,13 +299,16 @@ const ContentRight = styled(motion.div)`
       resize: none;
       font-family: "Poppins", sans-serif;
       width: 60%;
-      transition: all 0.3s ease;
+      transition: all 0.5s ease;
       &:hover {
         border-bottom: 7px solid #878787;
       }
       &:focus {
         border-bottom: 7px solid #878787;
         outline: none;
+        box-shadow: 1px 1px 30px #1b1b1b;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
       }
       @media screen and (max-width: 1500px) {
         width: 80%;

@@ -246,6 +246,6 @@ export const imageAnim = {
     scale: 1,
     rotate: 0,
     opacity: 1,
-    transition: { duration: 1 },
+    transition: { duration: 0.4 },
   },
 };
