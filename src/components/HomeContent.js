@@ -7,41 +7,80 @@ import {
   slideLeftForm,
   slideUpContainer,
   slideUpContent,
-  scrollReveal,
+  scrollRevealForm,
+  scrollRevealAbout,
 } from "./animation";
-import { useScroll } from "../useScroll";
+import { useScrollForm, useScrollAbout } from "../useScroll";
 
 const HomeContent = ({ isDesktop }) => {
-  const [element, controls] = useScroll();
+  const [elementForm, controlsForm] = useScrollForm();
+  const [elementAbout, controlsAbout] = useScrollAbout();
   return (
     <StyledHomeContent>
-      <ContentLeft variants={slideUpContainer} initial="hidden" animate="show">
-        <ContentLeftTop>
-          <motion.h2 variants={slideUpContent} className="aboutme">
-            About Me
-          </motion.h2>
-          <motion.p variants={slideUpContent}>
-            Michael Podolsky is a front-end software developer in training based
-            in Las Vegas, Nevada. He will be attending UNLV in the fall of 2021
-            to study computer science. Michael has a passion for music and has
-            been playing guitar for over half of his life.
-          </motion.p>
-        </ContentLeftTop>
-        <ContentLeftBottom>
-          <motion.h2 variants={slideUpContent}>
-            Experience in the following technologies:
-          </motion.h2>
-          <motion.ul variants={slideUpContent}>
-            <li>HTML</li>
-            <li>(S)SCSS</li>
-            <li>JavaScript(ES6+)</li>
-            <li>React</li>
-            <li>Node.js</li>
-            <li>Figma</li>
-            <li>Adobe Photoshop</li>
-          </motion.ul>
-        </ContentLeftBottom>
-      </ContentLeft>
+      {isDesktop ? (
+        <ContentLeft
+          variants={slideUpContainer}
+          initial="hidden"
+          animate="show"
+        >
+          <ContentLeftTop>
+            <motion.h2 variants={slideUpContent} className="aboutme">
+              About Me
+            </motion.h2>
+            <motion.p variants={slideUpContent}>
+              Michael Podolsky is a front-end software developer in training
+              based in Las Vegas, Nevada. He will be attending UNLV in the fall
+              of 2021 to study computer science. Michael has a passion for music
+              and has been playing guitar for over half of his life.
+            </motion.p>
+          </ContentLeftTop>
+          <ContentLeftBottom>
+            <motion.h2 variants={slideUpContent}>
+              Experience in the following technologies:
+            </motion.h2>
+            <motion.ul variants={slideUpContent}>
+              <li>HTML</li>
+              <li>(S)SCSS</li>
+              <li>JavaScript(ES6+)</li>
+              <li>React</li>
+              <li>Node.js</li>
+              <li>Figma</li>
+              <li>Adobe Photoshop</li>
+            </motion.ul>
+          </ContentLeftBottom>
+        </ContentLeft>
+      ) : (
+        <ContentLeft
+          variants={scrollRevealAbout}
+          ref={elementAbout}
+          initial="hidden"
+          animate={controlsAbout}
+          style={{ marginBottom: "2rem" }}
+        >
+          <ContentLeftTop>
+            <motion.h2 className="aboutme">About Me</motion.h2>
+            <motion.p>
+              Michael Podolsky is a front-end software developer in training
+              based in Las Vegas, Nevada. He will be attending UNLV in the fall
+              of 2021 to study computer science. Michael has a passion for music
+              and has been playing guitar for over half of his life.
+            </motion.p>
+          </ContentLeftTop>
+          <ContentLeftBottom>
+            <motion.h2>Experience in the following technologies:</motion.h2>
+            <motion.ul>
+              <li>HTML</li>
+              <li>(S)SCSS</li>
+              <li>JavaScript(ES6+)</li>
+              <li>React</li>
+              <li>Node.js</li>
+              <li>Figma</li>
+              <li>Adobe Photoshop</li>
+            </motion.ul>
+          </ContentLeftBottom>
+        </ContentLeft>
+      )}
+
       {isDesktop ? (
         <ContentRight
           variants={slideLeftContainerForm}
@@ -102,14 +141,19 @@ const HomeContent = ({ isDesktop }) => {
         </ContentRight>
       ) : (
         <ContentRight
-          variants={scrollReveal}
-          ref={element}
+          variants={scrollRevealForm}
+          ref={elementForm}
           initial="hidden"
-          animate={controls}
+          animate={controlsForm}
           style={{ marginBottom: "7rem" }}
         >
           <motion.h2>Contact Me</motion.h2>
-          <form className="form" name="contact" method="post">
+          <form
+            style={{ marginTop: "2rem" }}
+            className="form"
+            name="contact"
+            method="post"
+          >
             <input type="hidden" name="form-name" value="contact"></input>
             <motion.label htmlFor="name">Name:</motion.label>
             <br />
