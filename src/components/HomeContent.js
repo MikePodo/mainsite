@@ -106,6 +106,7 @@ const HomeContent = ({ isDesktop }) => {
           ref={element}
           initial="hidden"
           animate={controls}
+          style={{ marginBottom: "7rem" }}
         >
           <motion.h2>Contact Me</motion.h2>
           <form className="form" name="contact" method="post">

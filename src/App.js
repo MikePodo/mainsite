@@ -6,8 +6,6 @@ import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 //Router
 import { Switch, Route, useLocation } from "react-router-dom";
-//Animation
-import { AnimatePresence } from "framer-motion";
 
 function App() {
   const [burgerMenu, setBurgerMenu] = useState(false);
