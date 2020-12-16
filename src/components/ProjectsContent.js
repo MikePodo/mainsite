@@ -2,9 +2,13 @@ import React from "react";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 //Img
+import beatmaker from "../img/beatmaker.jpg";
+import bmi from "../img/bmi.jpg";
 import capture from "../img/capture.jpg";
 import coolors from "../img/coolors.jpg";
 import ignite from "../img/ignite.jpg";
+import portfolio from "../img/portfolio.jpg";
+import todolist from "../img/todolist.jpg";
 import twitter from "../img/twitter.jpg";
 import waves from "../img/waves.jpg";
 //Animation
@@ -17,6 +21,10 @@ const ProjectsContent = () => {
   const [elementForm3, controlsForm3] = useScrollForm();
   const [elementForm4, controlsForm4] = useScrollForm();
   const [elementForm5, controlsForm5] = useScrollForm();
+  const [elementForm6, controlsForm6] = useScrollForm();
+  const [elementForm7, controlsForm7] = useScrollForm();
+  const [elementForm8, controlsForm8] = useScrollForm();
+  const [elementForm9, controlsForm9] = useScrollForm();
   return (
     <StyledContent>
       <motion.a
@@ -62,7 +70,7 @@ const ProjectsContent = () => {
         </div>
         <motion.h2>
           <span>Ignite:</span> <br />a site utilizing an API to display
-          categorized games
+          categorized video games
         </motion.h2>
         <img className="image" src={ignite} alt="project" />
       </motion.a>
@@ -129,6 +137,92 @@ const ProjectsContent = () => {
           <span>Coolors:</span> <br />a color picking toolkit for web developers
         </motion.h2>
         <img className="image" src={coolors} alt="project" />
+      </motion.a>
+      <motion.a
+        variants={scrollRevealImage}
+        ref={elementForm6}
+        initial="hidden"
+        animate={controlsForm6}
+        target="_blank"
+        href="https://mikepodo-beatmaker.netlify.app/"
+      >
+        <div className="info">
+          <h1>Technologies Used:</h1>
+          <ul>
+            <li>JavaScript</li>
+            <li>HTML</li>
+            <li>Sass</li>
+          </ul>
+        </div>
+        <motion.h2>
+          <span>Beatmaker:</span> <br />a musical drum beat site
+        </motion.h2>
+        <img className="image" src={beatmaker} alt="project" />
+      </motion.a>
+      <motion.a
+        variants={scrollRevealImage}
+        ref={elementForm7}
+        initial="hidden"
+        animate={controlsForm7}
+        target="_blank"
+        href="https://mikepodo-todolist.netlify.app/"
+      >
+        <div className="info">
+          <h1>Technologies Used:</h1>
+          <ul>
+            <li>JavaScript</li>
+            <li>HTML</li>
+            <li>Sass</li>
+          </ul>
+        </div>
+        <motion.h2>
+          <span>Todo List:</span> <br />a beginner programmer's todo list
+          application
+        </motion.h2>
+        <img className="image" src={todolist} alt="project" />
+      </motion.a>
+      <motion.a
+        variants={scrollRevealImage}
+        ref={elementForm8}
+        initial="hidden"
+        animate={controlsForm8}
+        target="_blank"
+        href="https://mikepodo-portfolio.netlify.app/"
+      >
+        <div className="info">
+          <h1>Technologies Used:</h1>
+          <ul>
+            <li>HTML</li>
+            <li>Sass</li>
+          </ul>
+        </div>
+        <motion.h2>
+          <span>Portfolio:</span> <br />a site that has been replaced with
+          mikepodo.net
+        </motion.h2>
+        <img className="image" src={portfolio} alt="project" />
+      </motion.a>
+      <motion.a
+        variants={scrollRevealImage}
+        ref={elementForm9}
+        initial="hidden"
+        animate={controlsForm9}
+        target="_blank"
+        href="https://mikepodo-bmi-calculator.netlify.app/"
+      >
+        <div className="info">
+          <h1>Technologies Used:</h1>
+          <ul>
+            <li>JavaScript</li>
+            <li>HTML</li>
+            <li>CSS</li>
+          </ul>
+        </div>
+        <motion.h2>
+          <span>BMI Calculator:</span> <br />a calculator used to find one's
+          body mass index
+        </motion.h2>
+        <img className="image" src={bmi} alt="project" />
       </motion.a>
     </StyledContent>
   );
