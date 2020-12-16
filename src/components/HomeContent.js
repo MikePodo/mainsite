@@ -38,15 +38,24 @@ const HomeContent = ({ isDesktop }) => {
             <motion.h2 variants={slideUpContent}>
               Experience in the following technologies:
             </motion.h2>
-            <motion.ul variants={slideUpContent}>
-              <li>HTML</li>
-              <li>(S)SCSS</li>
-              <li>JavaScript(ES6+)</li>
-              <li>React</li>
-              <li>Node.js</li>
-              <li>Figma</li>
-              <li>Adobe Photoshop</li>
-            </motion.ul>
+            <motion.div variants={slideUpContent} className="columns">
+              <motion.ul>
+                <li>HTML</li>
+                <li>(S)SCSS</li>
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>Node.js</li>
+                <li>Figma</li>
+                <li>Adobe Photoshop</li>
+              </motion.ul>
+              <motion.ul className="column2">
+                <li>Redux</li>
+                <li>Styled Components</li>
+                <li>Framer Motion</li>
+                <li>Firebase</li>
+                <li>Axios</li>
+              </motion.ul>
+            </motion.div>
           </ContentLeftBottom>
         </ContentLeft>
       ) : (
@@ -74,6 +83,11 @@ const HomeContent = ({ isDesktop }) => {
               <li>JavaScript(ES6+)</li>
               <li>React</li>
               <li>Node.js</li>
+              <li>Redux</li>
+              <li>Styled Components</li>
+              <li>Framer Motion</li>
+              <li>Firebase</li>
+              <li>Axios</li>
               <li>Figma</li>
               <li>Adobe Photoshop</li>
             </motion.ul>
@@ -199,6 +213,9 @@ const ContentLeft = styled(motion.div)`
   margin-top: 1rem;
   width: 25%;
   margin-right: 1rem;
+  @media screen and (max-width: 1382px) {
+    width: 30%;
+  }
   .aboutme {
     text-align: center;
   }
@@ -214,6 +231,9 @@ const ContentLeft = styled(motion.div)`
   }
   ul {
     list-style-position: inside;
+    @media screen and (max-width: 800px) {
+      text-align: center;
+    }
   }
 
   @media screen and (max-width: 1800px) {
@@ -242,6 +262,13 @@ const ContentLeft = styled(motion.div)`
 
 const ContentLeftTop = styled(motion.div)``;
 const ContentLeftBottom = styled(motion.div)`
+  .columns {
+    display: flex;
+    justify-content: space-between;
+    .column2 {
+      width: 30%;
+    }
+  }
   @media screen and (max-width: 1800px) {
     margin-top: 2rem;
   }

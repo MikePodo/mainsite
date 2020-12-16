@@ -45,7 +45,7 @@ const HomeTitle = () => {
 };
 
 const HomeTitleBackground = styled(motion.div)`
-  background: #3f0000;
+  background: #360000;
   width: 100%;
   height: 100%;
   position: absolute;
