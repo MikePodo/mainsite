@@ -6,30 +6,28 @@ import Cert1 from "../img/html.jpg";
 import Cert2 from "../img/javascript.jpg";
 import Cert3 from "../img/react.jpg";
 //Animation
-import { imageAnim } from "./animation";
+import { imageAnim, slideLeftContainer } from "./animation";
 const CertificatesContent = () => {
   return (
-    <StyledContent>
+    <StyledContent
+      variants={slideLeftContainer}
+      initial="hidden"
+      animate="show"
+    >
       <motion.img
         variants={imageAnim}
-        initial="hidden"
-        animate="show"
         className="image"
         src={Cert1}
         alt="html"
       />
       <motion.img
         variants={imageAnim}
-        initial="hidden"
-        animate="show"
         className="image"
         src={Cert2}
         alt="javascript"
       />
       <motion.img
         variants={imageAnim}
-        initial="hidden"
-        animate="show"
         className="image"
         src={Cert3}
         alt="react"

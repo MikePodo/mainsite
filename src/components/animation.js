@@ -240,11 +240,11 @@ export const imageAnim = {
   hidden: {
     scale: 1.3,
     opacity: 0,
-    skew: 10,
+    rotate: 10,
   },
   show: {
     scale: 1,
-    skew: 0,
+    rotate: 0,
     opacity: 1,
     transition: { duration: 1 },
   },
