@@ -14,7 +14,7 @@ export const useScrollForm = () => {
 
 export const useScrollAbout = () => {
   const controlsAbout = useAnimation();
-  const [elementAbout, viewAbout] = useInView({ threshold: 0.4 });
+  const [elementAbout, viewAbout] = useInView({ threshold: 0.6 });
   if (viewAbout) {
     controlsAbout.start("show");
   } else {
