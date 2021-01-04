@@ -2,9 +2,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 //Img
-import Cert1 from "../img/html.jpg";
-import Cert2 from "../img/javascript.jpg";
-import Cert3 from "../img/react.jpg";
+import HTMLCert from "../img/html.jpg";
+import JSCert from "../img/javascript.jpg";
+import ReactCert from "../img/react.jpg";
+import RNCert from "../img/react-native-1.jpg";
 //Animation
 import { imageAnim, slideLeftContainer } from "./animation";
 const CertificatesContent = () => {
@@ -17,20 +18,26 @@ const CertificatesContent = () => {
       <motion.img
         variants={imageAnim}
         className="image"
-        src={Cert1}
+        src={HTMLCert}
         alt="html"
       />
       <motion.img
         variants={imageAnim}
         className="image"
-        src={Cert2}
+        src={JSCert}
         alt="javascript"
       />
       <motion.img
         variants={imageAnim}
         className="image"
-        src={Cert3}
+        src={ReactCert}
         alt="react"
+      />
+      <motion.img
+        variants={imageAnim}
+        className="image"
+        src={RNCert}
+        alt="react-native"
       />
     </StyledContent>
   );
