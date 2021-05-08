@@ -7,6 +7,7 @@ import JSCert from "../img/javascript.jpg";
 import ReactCert from "../img/react.jpg";
 import RNCert from "../img/react-native-1.jpg";
 import RN2Cert from "../img/react-native-2.jpg";
+import ReduxCert from "../img/redux.jpg";
 //Animation
 import { imageAnim, slideLeftContainer } from "./animation";
 const CertificatesContent = () => {
@@ -33,6 +34,12 @@ const CertificatesContent = () => {
         className="image"
         src={ReactCert}
         alt="react"
+      />
+      <motion.img
+        variants={imageAnim}
+        className="image"
+        src={ReduxCert}
+        alt="redux"
       />
       <motion.img
         variants={imageAnim}
